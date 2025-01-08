@@ -27,8 +27,8 @@
         Commit l
         Fail]           
   
-  [Program ::= I*]
-
+  [Program ::= I*]          ; Isso tá certo?
+  
   [x ::= character]            
   [l ::= number])              
 
