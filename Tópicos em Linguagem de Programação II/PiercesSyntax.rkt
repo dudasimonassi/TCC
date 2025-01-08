@@ -26,3 +26,5 @@
 
 ; Testes e exemplos
 (redex-match? Pierces T (term (if (iszero 0) then (succ 0) else (pred 0)) ) ) 
+(redex-match? Pierces T (term (if (iszero 0) then (succ 0) else (pred (succ 0))) ) )
+(redex-match? Pierces T (term (if (iszero 0) then (succ 0) else (pred (succ (succ 10)))) ) )
