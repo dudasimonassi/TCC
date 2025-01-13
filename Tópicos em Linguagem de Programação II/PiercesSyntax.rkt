@@ -16,8 +16,8 @@
 ; Definição da Linguagem Pierce´s
 (define-language Pierces
     (T ::= 
-        (true)
-        (false)
+        true
+        false
         (if T then T else T)
         0
         (succ T)

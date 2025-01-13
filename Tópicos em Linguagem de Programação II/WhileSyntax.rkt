@@ -26,7 +26,7 @@
 (define-language WhileLinguage 
     [A ::=
         natural 
-        variable                      ; A palavra "natural" e "variable" é reservada do Racket? A gente que define isso?
+        variable               
         (A + A)                                  
         (A - A)
         (A * A)]
@@ -37,7 +37,7 @@
         (A <= A)
         (not B)
         (B and B)]
-    [x y z :: variable-not-otherwise-mentioned])    ; Apenas as variáveis x, y e z são válidas na Linguagem While? Consegui rodar com a
+    [x y z :: variable-not-otherwise-mentioned])
 
 ; Definição da Linguagem While Extendida - Aqui foram definidos apenas os não-terminais?
 (define-extended-language While WhileLinguage
