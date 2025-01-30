@@ -1,2 +1,0 @@
-1. Dúvidas no arquivo WhileSyntax
-2. Dúvidas no arquivo LuaSyntax
