@@ -20,18 +20,15 @@
     [Program ::= ((I ...) (I ...))]  
 
     [Input ::= ((natural ...) (natural ...))] 
- 
-
-    [R ::= suc
-           fail]
-    
-    ;; State components - Program P, Subject S, pc, i, Stack
-    [State ::= (R Program (natural ...) natural natural Stack)]     
 
     ;; Stack definition
     [Stack ::= (StackEntry ...)]             
     [StackEntry ::= natural              
-                 (natural natural)])    
+                 (natural natural)]
+                 
+
+    [R ::= suc
+           fail])    
 
 ; Testes e exemplos
 ; (redex-match? ParsingMachineLanguage Program (term ((Char 0))))

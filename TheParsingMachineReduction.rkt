@@ -78,18 +78,25 @@
 
 (define-metafunction ParsingMachineLanguage
      moveProgram : Program integer -> Program
-     [(moveProgram Program 0) Program]
-     [(moveProgram ((I ...) ()) integer) ((I ...) ()) (side-condition (> (term integer) 0))]
-     [(moveProgram ((I_1 ...) (I_2 I_3 ...)) integer) (moveProgram((I_1 ... I_2) (I_3 ...)) ,(- (term integer) 1)) (side-condition (> (term integer) 0))]
-     [(moveProgram (() (I ...)) integer) (() (I ...))]
-     [(moveProgram ((I_1 ... I_2) (I_3 ...)) integer) (moveProgram((I_1 ...) (I_2 I_3 ...)) ,(+ (term integer) 1))]
+     [(moveProgram Program 0) 
+      Program]
+     [(moveProgram ((I ...) ()) integer) 
+      ((I ...) ()) (side-condition 
+      (> (term integer) 0))]
+     [(moveProgram ((I_1 ...) (I_2 I_3 ...)) integer) 
+      (moveProgram((I_1 ... I_2) (I_3 ...)) ,(- (term integer) 1)) 
+      (side-condition (> (term integer) 0))]
+     [(moveProgram (() (I ...)) integer) 
+      (() (I ...))]
+     [(moveProgram ((I_1 ... I_2) (I_3 ...)) integer) 
+      (moveProgram((I_1 ...) (I_2 I_3 ...)) ,(+ (term integer) 1))]
 ) 
 
 (define-metafunction ParsingMachineLanguage
      moveInput : Input integer -> Input
      [(moveInput Input 0) Input]
      [(moveInput ((natural ...) ()) integer) ((natural ...) ()) (side-condition (> (term integer) 0))]
-     [(moveInput ((natural_1 ...) (natural_2 natural_3 ...)) integer) (moveInput((natural_1 ... natural_2) (natural_3 ...)) ,(- (term integer) 1)) (side-condition (> (term integer) 0))]
+     [(moveInput ((natural_1 ...) (natural_2 natural_3 ...)) integer) (moveInput((natural_1 ... natural_2) (natural_3 ...)) ,(-  (term integer) 1)) (side-condition (> (term integer) 0))]
      [(moveInput (() (natural ...)) integer) (() (natural ...))]
      [(moveInput ((natural_1 ... natural_2) (natural_3 ...)) integer) (moveInput((natural_1 ...) (natural_2 natural_3 ...)) ,(+ (term integer) 1))]
 ) 
@@ -117,12 +124,12 @@
 
 (traces PM (term (      suc
                         (()    
-                        ((Char 97) (Char 98) (Char 98) (Commit 2) (Char 97) (Char 98) (Char 97) (Char 98)))  
+                        ((Char 97) (Char 98) (Char 99)))  
                         (() 
-                        (97 98 98 96))          
+                        (97 98 99 80))          
                         1              
                         0              
-                        (1 (2 1)))))
+                        ((2 3)))))
 
 #;(term (moveProgram (() ((Char 97) (Char 98) (Char 97) (Char 97) Any)) 7))
 #;(term (moveProgram (() ((Char 97) (Char 98) (Char 97) (Char 97) Any)) 0))
