@@ -28,7 +28,6 @@
         (se e somente se L L)
         [p q r t ::= variable-not-otherwise-mentioned]))
 
-
 ; Testes e exemplos
 (redex-match? Logic L (term (nao (verdadeiro)) ) ) 
 (redex-match? Logic L (term (nao (falso)) ) ) 
